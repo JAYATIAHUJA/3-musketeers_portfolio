@@ -655,7 +655,7 @@ body::after {
 
 }
 
-/* Sticky Chatbot Button */
+/* Chatbot Toggle Button */
 .chat-toggle {
     position: fixed;
     bottom: 30px;
@@ -663,30 +663,60 @@ body::after {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: #2c3e50;
-    border: none;
-    color: white;
-    font-size: 24px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
     cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 1000;
+    box-shadow: 0 0 10px var(--neon-blue);
 }
 
+.chat-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--neon-blue);
+    background: var(--neon-blue);
+    color: var(--dark-bg);
+}
+
+.chat-toggle i {
+    font-size: 24px;
+}
+
+.notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--neon-pink);
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--dark-bg);
+    box-shadow: 0 0 5px var(--neon-pink);
+}
+
+/* Chatbot Container */
 .chat-container {
     position: fixed;
     bottom: 100px;
     right: 30px;
     width: 350px;
     height: 500px;
-    background: #fff;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--neon-blue);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     display: none;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 999;
+    box-shadow: 0 0 20px var(--neon-blue);
 }
 
 .chat-container.active {
@@ -694,341 +724,31 @@ body::after {
 }
 
 .chat-header {
-    background: #2c3e50;
-    color: white;
     padding: 15px;
-    border-radius: 10px 10px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid var(--neon-blue);
 }
 
 .chat-header h3 {
     margin: 0;
-    font-size: 18px;
+    color: var(--neon-blue);
+    font-size: 1.2rem;
 }
 
 #close-chat {
     background: none;
     border: none;
-    color: white;
+    color: var(--neon-blue);
     cursor: pointer;
     font-size: 20px;
-}
-
-.chat-messages {
-    flex-grow: 1;
-    padding: 15px;
-    overflow-y: auto;
-}
-
-.message {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 80%;
-}
-
-.user-message {
-    background: #e3f2fd;
-    margin-left: auto;
-}
-
-.bot-message {
-    background: #f5f5f5;
-    margin-right: auto;
-}
-
-.chat-input {
-    padding: 15px;
-    border-top: 1px solid #ddd;
-    display: flex;
-    gap: 10px;
-}
-
-.chat-input input {
-    flex-grow: 1;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    outline: none;
-}
-
-.chat-input button {
-    background: #2c3e50;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.notification {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: #e74c3c;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 8rem 2rem;
-    background-color: #f9f9f9;
-    position: relative;
-}
-
-.contact-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/coffee.png');
-    opacity: 0.05;
-    pointer-events: none;
-}
-
-.contact-section h2 {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 4rem;
-    color: #2c1810;
-    position: relative;
-    display: inline-block;
-}
-
-.contact-section h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background-color: #c0392b;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.info-item:hover {
-    transform: translateX(10px);
-}
-
-.info-item i {
-    font-size: 2rem;
-    color: #c0392b;
-    background: rgba(192, 57, 43, 0.1);
-    padding: 1rem;
-    border-radius: 50%;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 1.2rem;
-    border: 2px solid #eee;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #c0392b;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
-}
-
-.contact-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-.contact-form button {
-    padding: 1.2rem;
-    background-color: #c0392b;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.contact-form button:hover {
-    background-color: #a93226;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(192, 57, 43, 0.3);
-}
-
-/* Footer */
-.footer {
-    background-color: #2c1810;
-    color: white;
-    padding: 3rem 2rem;
-    text-align: center;
-    position: relative;
-}
-
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/coffee.png');
-    opacity: 0.1;
-    pointer-events: none;
-}
-
-.footer-content {
-    position: relative;
-    z-index: 1;
-}
-
-.social-links {
-    margin-bottom: 2rem;
-}
-
-.social-links a {
-    color: white;
-    font-size: 1.8rem;
-    margin: 0 1.5rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.social-links a:hover {
-    color: #c0392b;
-    transform: translateY(-5px);
-}
-
-/* Contact Section Styles */
-.contact-section {
-    padding: 80px 0;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.contact-info {
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: all 0.3s ease;
-}
-
-.contact-info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.info-item i {
-    font-size: 24px;
-}
-
-.retro-input {
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 2px solid #00ffff;
-    color: #fff;
-    padding: 10px;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
-}
-
-.retro-input:focus {
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-    outline: none;
-}
-
-/* Chatbot Styles */
-.chat-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 2px solid #00ffff;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-.chat-toggle:hover {
+#close-chat:hover {
+    color: var(--neon-pink);
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-}
-
-.chat-container {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 350px;
-    height: 500px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    display: none;
-    flex-direction: column;
-    z-index: 999;
-}
-
-.chat-header {
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .chat-messages {
@@ -1045,58 +765,54 @@ body::after {
 }
 
 .bot-message {
-    background-color: rgba(0, 255, 255, 0.1);
+    background: rgba(45, 226, 230, 0.1);
     margin-right: auto;
+    border: 1px solid var(--neon-blue);
 }
 
 .user-message {
-    background-color: rgba(255, 0, 255, 0.1);
+    background: rgba(255, 45, 149, 0.1);
     margin-left: auto;
+    border: 1px solid var(--neon-pink);
 }
 
 .chat-input {
     padding: 15px;
     display: flex;
     gap: 10px;
+    border-top: 2px solid var(--neon-blue);
 }
 
 .chat-input input {
     flex-grow: 1;
     padding: 10px;
-    border: 2px solid #00ffff;
-    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--neon-blue);
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
     border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+}
+
+.chat-input input:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--neon-blue);
 }
 
 .chat-input button {
     padding: 10px 15px;
-    background-color: transparent;
-    border: 2px solid #00ffff;
-    color: #fff;
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .chat-input button:hover {
-    background-color: rgba(0, 255, 255, 0.2);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-}
-
-.notification {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #ff00ff;
-    color: #fff;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
+    background: var(--neon-blue);
+    color: var(--dark-bg);
+    box-shadow: 0 0 15px var(--neon-blue);
 }
 
 .pixel-border-bottom {

@@ -101,20 +101,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatToggle = document.getElementById('chat-toggle');
     const chatContainer = document.getElementById('chat-container');
     const closeChat = document.getElementById('close-chat');
-    const userInput = document.getElementById('user-input');
     const chatMessages = document.getElementById('chat-messages');
+    const userInput = document.getElementById('user-input');
     const hamburger = document.querySelector('.navbar-toggler');
     const navLinks = document.querySelector('#navbarNav');
 
-    // Chatbot Toggle
+    // Chatbot responses
+    const botResponses = {
+        'hello': 'Greetings, traveler! How can I assist you today?',
+        'hi': 'Hello there! What brings you to our digital realm?',
+        'help': 'I can help you with: \n1. Team information\n2. Project details\n3. Contact information\n4. General queries',
+        'team': 'We are the Three Musketeers: \n- Astha Pathak (Frontend Developer)\n- Oshi Sharma (Researcher)\n- Jayati Ahuja (UI/UX Designer)',
+        'projects': 'Our featured projects include: \n- E-commerce Platform\n- Mobile App Redesign\n- Research Studies\n- Web Development Projects',
+        'contact': 'You can reach us at: \n- Location: VIPSTC, Delhi\n- Hours: Mon-Fri, 7AM-8PM\n- Phone: 8888999988',
+        'default': 'I\'m not sure I understand. Try asking about our team, projects, or contact information!'
+    };
+
+    // Toggle chat visibility
     chatToggle.addEventListener('click', () => {
-        chatContainer.classList.add('active');
-        chatToggle.style.display = 'none';
+        chatContainer.classList.toggle('active');
     });
 
     closeChat.addEventListener('click', () => {
         chatContainer.classList.remove('active');
-        chatToggle.style.display = 'flex';
     });
 
     // Mobile Menu Toggle
@@ -122,66 +131,44 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
     });
 
-    // Send Message Function
-    window.sendMessage = function() {
+    // Send message function
+    function sendMessage() {
         const message = userInput.value.trim();
-        
-        if (message !== '') {
-            // Add user message
-            addMessage(message, 'user-message');
-            
-            // Clear input
-            userInput.value = '';
-            
-            // Scroll to bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-            
-            // Simulate bot response
-            setTimeout(() => {
-                const botResponse = getBotResponse(message);
-                addMessage(botResponse, 'bot-message');
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }, 1000);
-        }
+        if (message === '') return;
+
+        // Add user message
+        addMessage(message, 'user');
+
+        // Process and get bot response
+        const response = getBotResponse(message.toLowerCase());
+        setTimeout(() => {
+            addMessage(response, 'bot');
+        }, 500);
+
+        // Clear input
+        userInput.value = '';
     }
 
-    // Add Message to Chat
-    function addMessage(text, className) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${className}`;
-        messageDiv.textContent = text;
-        chatMessages.appendChild(messageDiv);
-    }
-
-    // Get Bot Response
+    // Get bot response
     function getBotResponse(message) {
-        // Simple response logic
-        const responses = {
-            'hello': 'Hi there! How can I help you today?',
-            'hi': 'Hello! What can I do for you?',
-            'help': 'I can help you with information about our services, team members, or general inquiries. What would you like to know?',
-            'bye': 'Goodbye! Have a great day!',
-            'thanks': 'You\'re welcome! Is there anything else I can help you with?',
-            'contact': 'You can reach us through the contact form on our website or connect with us on social media.',
-            'team': 'Our team consists of Astha Pathak (Frontend Developer), Oshi Sharma (Researcher), and Jayati Ahuja (UI/UX Designer).',
-            'services': 'We specialize in web development, research, and UI/UX design. Which area would you like to know more about?'
-        };
-
-        // Convert message to lowercase for matching
-        message = message.toLowerCase();
-
-        // Check for matching responses
-        for (let key in responses) {
+        for (const [key, value] of Object.entries(botResponses)) {
             if (message.includes(key)) {
-                return responses[key];
+                return value;
             }
         }
-
-        // Default response if no match found
-        return "I'm not sure I understand. Could you please rephrase that or ask about our team, services, or contact information?";
+        return botResponses.default;
     }
 
-    // Handle Enter Key
+    // Add message to chat
+    function addMessage(message, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', `${sender}-message`);
+        messageDiv.innerHTML = `<p class="retro-text">${message}</p>`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Handle enter key
     userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             sendMessage();
