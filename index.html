@@ -56,25 +56,25 @@
     
     <!-- Chat bot -->
      <!-- Sticky Chatbot Button -->
-    <button id="chat-toggle" class="chat-toggle">
-        <i class="fas fa-comments"></i>
-        <span class="notification">3</span>
+    <button id="chat-toggle" class="chat-toggle retro-btn">
+        <i class="fas fa-comments neon-text"></i>
+        <span class="notification pixel-border">3</span>
     </button>
 
     <!-- Chatbot Container -->
-    <div id="chat-container" class="chat-container">
-        <div class="chat-header">
-            <h3>Chat with Us</h3>
-            <button id="close-chat"><i class="fas fa-times"></i></button>
+    <div id="chat-container" class="chat-container pixel-border">
+        <div class="chat-header pixel-border-bottom">
+            <h3 class="neon-text">Chat with Us</h3>
+            <button id="close-chat" class="retro-btn"><i class="fas fa-times neon-text"></i></button>
         </div>
         <div class="chat-messages" id="chat-messages">
-            <div class="message bot-message">
-                Hello! How can I help you today?
+            <div class="message bot-message pixel-border">
+                <p class="retro-text">Hello! How can I help you today?</p>
             </div>
         </div>
-        <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Type your message...">
-            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        <div class="chat-input pixel-border-top">
+            <input type="text" id="user-input" class="retro-input" placeholder="Type your message...">
+            <button onclick="sendMessage()" class="retro-btn"><i class="fas fa-paper-plane neon-text"></i></button>
         </div>
     </div>
 
@@ -88,7 +88,7 @@
                     <div class="portfolio-card" id="portfolio1">
                         <div class="card-content">
                             <div class="pixel-frame">
-                                <img src="./WhatsApp Image 2025-03-27 at 1.08.17 PM (1).jpeg" alt="Portfolio 1" class="img-fluid rounded-circle mb-3">
+                                <img src="./WhatsApp Image 2025-03-27 at 1.08.15 PM.jpeg" alt="Portfolio 1" class="img-fluid rounded-circle mb-3">
                             </div>
                             <h3 class="neon-text">Astha Pathak</h3>
                             <p class="retro-text">Frontend Developer</p>
@@ -101,7 +101,7 @@
                     <div class="portfolio-card" id="portfolio2">
                         <div class="card-content">
                             <div class="pixel-frame">
-                                <img src="./WhatsApp Image 2025-03-27 at 1.08.15 PM.jpeg" alt="Portfolio 2" class="img-fluid rounded-circle mb-3">
+                                <img src="./WhatsApp Image 2025-03-27 at 1.08.17 PM (1).jpeg" alt="Portfolio 2" class="img-fluid rounded-circle mb-3">
                             </div>
                             <h3 class="neon-text">Oshi Sharma</h3>
                             <p class="retro-text">Researcher</p>
@@ -114,7 +114,7 @@
                     <div class="portfolio-card" id="portfolio3">
                         <div class="card-content">
                             <div class="pixel-frame">
-                                <img src="WhatsApp Image 2025-03-27 at 1.08.17 PM.jpeg" alt="Portfolio 3" class="img-fluid rounded-circle mb-3">
+                                <img src="./WhatsApp Image 2025-03-27 at 1.08.17 PM.jpeg" alt="Portfolio 3" class="img-fluid rounded-circle mb-3">
                             </div>
                             <h3 class="neon-text">Jayati Ahuja</h3>
                             <p class="retro-text">UI/UX Designer</p>
@@ -134,28 +134,40 @@
 
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
-            <h2>Visit Us</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>123 Coffee Street, Brew City</p>
+            <div class="container">
+                <h2 class="text-center neon-text mb-5">Visit Us</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-info pixel-border p-4">
+                            <div class="info-item mb-4">
+                                <i class="fas fa-map-marker-alt neon-text"></i>
+                                <p class="retro-text">VIPSTC , DELHI </p>
+                            </div>
+                            <div class="info-item mb-4">
+                                <i class="fas fa-clock neon-text"></i>
+                                <p class="retro-text">Mon - Fri: 7:00 AM - 8:00 PM</p>
+                            </div>
+                            <div class="info-item mb-4">
+                                <i class="fas fa-phone neon-text"></i>
+                                <p class="retro-text">8888999988</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <p>Mon - Fri: 7:00 AM - 8:00 PM</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>(555) 123-4567</p>
+                    <div class="col-md-6">
+                        <form class="contact-form pixel-border p-4">
+                            <div class="mb-3">
+                                <input type="text" class="form-control retro-input" placeholder="Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control retro-input" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control retro-input" placeholder="Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="retro-btn w-100">Send Message</button>
+                        </form>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
             </div>
         </section>
     

@@ -13,59 +13,117 @@
 <body class="retro-bg">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark neon-nav fixed-top">
-        <!-- ... navbar content ... -->
+        <div class="container">
+            <a class="navbar-brand neon-text" href="index.html">
+                <img src="./pixil-frame-0 (2).png" alt="Logo" class="logo-img">
+                3 Musketeers
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link neon-text" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link neon-text" href="index.html#about">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <!-- Member Profile Section -->
     <section class="member-page">
         <div class="container">
-            <div class="member-profile">
+            <div class="member-profile pixel-border">
                 <div class="row">
                     <div class="col-md-4 text-center">
-                        <img src="./WhatsApp Image 2025-03-27 at 1.08.15 PM.jpeg" alt="Oshi Sharma" class="rounded-circle">
+                        <div class="pixel-frame">
+                            <img src="./WhatsApp Image 2025-03-27 at 1.08.17 PM (1).jpeg" alt="Oshi Sharma" class="rounded-circle mb-4">
+                        </div>
                         <h2 class="neon-text mt-4">Oshi Sharma</h2>
                         <p class="neon-text-pink">Researcher</p>
                         <div class="social-links mt-4">
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="pixel-border"><i class="fab fa-github"></i></a>
+                            <a href="#" class="pixel-border"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="pixel-border"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <h3 class="neon-text">About Me</h3>
-                        <p class="mb-4">Dedicated researcher with a focus on innovative technologies and their applications. Experienced in data analysis and project management.</p>
+                        <div class="about-section pixel-border mb-4">
+                            <h3 class="neon-text">About Me</h3>
+                            <p class="retro-text">Dedicated researcher with a focus on innovative technologies and their applications. Experienced in data analysis and project management. Passionate about exploring new technological frontiers and their real-world applications.</p>
+                        </div>
                         
-                        <h3 class="neon-text">Skills</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                            <span class="skill-label">Research Methodology</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                            <span class="skill-label">Data Analysis</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                            <span class="skill-label">Project Management</span>
+                        <div class="skills-section pixel-border">
+                            <h3 class="neon-text mb-4">Skills</h3>
+                            <div class="skill-container">
+                                <div class="skill-item">
+                                    <span class="skill-label retro-text">Research Methodology</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="95">
+                                            <span class="progress-text">95%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-label retro-text">Data Analysis</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="88">
+                                            <span class="progress-text">88%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-label retro-text">Project Management</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85">
+                                            <span class="progress-text">85%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-label retro-text">Technical Writing</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="92">
+                                            <span class="progress-text">92%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h3 class="neon-text mt-5 mb-4">Research Projects</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="project-card">
-                        <h4 class="neon-text">Tech Innovation Study</h4>
-                        <p>Comprehensive research on emerging technologies and their impact on modern businesses.</p>
-                        <a href="#" class="know-more-btn">View Research</a>
+            <div class="projects-section mt-5">
+                <h3 class="neon-text mb-4">Research Projects</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="project-card pixel-border">
+                            <h4 class="neon-text">Tech Innovation Study</h4>
+                            <p class="retro-text">Comprehensive research on emerging technologies and their impact on modern businesses.</p>
+                            <div class="project-tags">
+                                <span class="tag">AI</span>
+                                <span class="tag">Blockchain</span>
+                                <span class="tag">IoT</span>
+                            </div>
+                            <a href="#" class="know-more-btn mt-3">View Research</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="project-card">
-                        <h4 class="neon-text">Data Analysis Framework</h4>
-                        <p>Development of an innovative framework for analyzing large-scale data sets.</p>
-                        <a href="#" class="know-more-btn">View Research</a>
+                    <div class="col-md-6">
+                        <div class="project-card pixel-border">
+                            <h4 class="neon-text">Data Analysis Framework</h4>
+                            <p class="retro-text">Development of an innovative framework for analyzing large-scale data sets.</p>
+                            <div class="project-tags">
+                                <span class="tag">Big Data</span>
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <a href="#" class="know-more-btn mt-3">View Research</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -10,61 +10,119 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="retro-bg">
-    <!-- Navbar (same as main page) -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark neon-nav fixed-top">
-        <!-- ... navbar content ... -->
+        <div class="container">
+            <a class="navbar-brand neon-text" href="index.html">
+                <img src="./pixil-frame-0 (2).png" alt="Logo" class="logo-img">
+                3 Musketeers
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link neon-text" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link neon-text" href="index.html#about">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <!-- Member Profile Section -->
     <section class="member-page">
         <div class="container">
-            <div class="member-profile">
+            <div class="member-profile pixel-border">
                 <div class="row">
                     <div class="col-md-4 text-center">
-                        <img src="./WhatsApp Image 2025-03-27 at 1.08.17 PM (1).jpeg" alt="Astha Pathak" class="rounded-circle">
+                        <div class="pixel-frame">
+                            <img src="./WhatsApp Image 2025-03-27 at 1.08.15 PM.jpeg" alt="Astha Pathak" class="rounded-circle mb-4">
+                        </div>
                         <h2 class="neon-text mt-4">Astha Pathak</h2>
                         <p class="neon-text-pink">Frontend Developer</p>
                         <div class="social-links mt-4">
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="pixel-border"><i class="fab fa-github"></i></a>
+                            <a href="#" class="pixel-border"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="pixel-border"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <h3 class="neon-text">About Me</h3>
-                        <p class="mb-4">Passionate frontend developer with expertise in creating immersive web experiences. Specializing in modern JavaScript frameworks and responsive design.</p>
+                        <div class="about-section pixel-border mb-4">
+                            <h3 class="neon-text">About Me</h3>
+                            <p class="retro-text">Creative frontend developer with a passion for building beautiful and responsive web applications. Experienced in modern web technologies and UI/UX best practices. Committed to creating engaging user experiences through clean and efficient code.</p>
+                        </div>
                         
-                        <h3 class="neon-text">Skills</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                            <span class="skill-label">HTML/CSS</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                            <span class="skill-label">JavaScript</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                            <span class="skill-label">React</span>
+                        <div class="skills-section pixel-border">
+                            <h3 class="neon-text mb-4">Skills</h3>
+                            <div class="skill-container">
+                                <div class="skill-item">
+                                    <span class="skill-label retro-text">HTML/CSS</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="95">
+                                            <span class="progress-text">95%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-label retro-text">JavaScript</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90">
+                                            <span class="progress-text">90%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-label retro-text">React</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85">
+                                            <span class="progress-text">85%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-label retro-text">UI/UX Design</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="88">
+                                            <span class="progress-text">88%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h3 class="neon-text mt-5 mb-4">Featured Projects</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="project-card">
-                        <h4 class="neon-text">Retro Portfolio</h4>
-                        <p>A cyberpunk-themed portfolio website with retro aesthetics and modern functionality.</p>
-                        <a href="#" class="know-more-btn">View Project</a>
+            <div class="projects-section mt-5">
+                <h3 class="neon-text mb-4">Featured Projects</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="project-card pixel-border">
+                            <h4 class="neon-text">E-commerce Platform</h4>
+                            <p class="retro-text">A modern e-commerce platform built with React and Node.js, featuring real-time updates and responsive design.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                            <a href="#" class="know-more-btn mt-3">View Project</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="project-card">
-                        <h4 class="neon-text">E-commerce Dashboard</h4>
-                        <p>Modern dashboard with real-time analytics and neon-themed UI components.</p>
-                        <a href="#" class="know-more-btn">View Project</a>
+                    <div class="col-md-6">
+                        <div class="project-card pixel-border">
+                            <h4 class="neon-text">Portfolio Website</h4>
+                            <p class="retro-text">A creative portfolio website showcasing modern web design principles and smooth animations.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <a href="#" class="know-more-btn mt-3">View Project</a>
+                        </div>
                     </div>
                 </div>
             </div>

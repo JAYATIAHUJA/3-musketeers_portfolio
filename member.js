@@ -1,14 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Animate skill bars
-    gsap.from('.skill-progress', {
-        width: 0,
-        duration: 1.5,
-        ease: 'power2.out',
-        stagger: 0.2,
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    // Create a GSAP timeline for skills animation
+    const skillsTimeline = gsap.timeline({
         scrollTrigger: {
-            trigger: '.skill-bar',
-            start: 'top 80%'
+            trigger: '.skills-section',
+            start: 'top center',
+            once: true
         }
+    });
+
+    // Animate each skill bar
+    skillBars.forEach(bar => {
+        const progress = bar.getAttribute('data-progress');
+        skillsTimeline.to(bar, {
+            width: `${progress}%`,
+            duration: 1.5,
+            ease: 'power2.out'
+        }, '-=1');
     });
 
     // Animate profile image
@@ -40,6 +50,46 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('mouseenter', () => {
             hoverSound.currentTime = 0;
             hoverSound.play();
+        });
+    });
+
+    // Add hover effects to project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card, {
+                y: -10,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                y: 0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    });
+
+    // Add hover effects to social links
+    const socialLinks = document.querySelectorAll('.social-links a');
+    socialLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            gsap.to(link, {
+                y: -3,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        link.addEventListener('mouseleave', () => {
+            gsap.to(link, {
+                y: 0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
         });
     });
 }); 
